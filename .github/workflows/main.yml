@@ -50,7 +50,7 @@ jobs:
           registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-          secure-environment-variables: weather.api.apiKey=${{ secrets.WHEATHER_API_KEY }}
+          secure-environment-variables: WEATHER_API_APIKEY=${{ secrets.WHEATHER_API_KEY }}
           ports: 8080:8080
           name: cloud-days-stefan
           location: 'westeurope'
