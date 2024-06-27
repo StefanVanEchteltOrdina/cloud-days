@@ -33,5 +33,5 @@ jobs:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
       - run: |
-          docker build -f src/main/docker/Dockerfile.jvm -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/cloud-days-stefan:${{ github.sha }}
+          docker build -f src/main/docker/Dockerfile.jvm -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/cloud-days-stefan:${{ github.sha }} .
           docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/cloud-days-stefan:${{ github.sha }}
