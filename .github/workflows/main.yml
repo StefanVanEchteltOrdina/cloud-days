@@ -51,4 +51,4 @@ jobs:
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
           name: cloud-days-stefan
-          location: 'west us'
+          location: 'west eu'
