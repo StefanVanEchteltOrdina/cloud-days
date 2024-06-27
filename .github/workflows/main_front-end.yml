@@ -1,0 +1,39 @@
+name: Build and Deploy next js to Azure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy-front-end:
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: ./frontend
+  
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+  
+        - name: Set up Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: '20.9.0'
+  
+        - name: Install dependencies
+          run: npm install
+  
+        - name: Build
+          run: npm run build  # Adjust build command if different
+  
+        - name: Deploy to Azure Static Web Apps
+          uses: azure/static-web-apps-deploy@v1
+          with:
+            azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+            repo_token: ${{ secrets.GITHUB_TOKEN }}
+            app_location: '/'  # Path to your application code within the repository
+            api_location: ''   # Path to your API code within the repository (optional)
+            output_location: ''  # Path to the build output directory (optional, defaults to 'build')
+            app_artifact_location: 'build'  # Path to the build output directory (required if output_location is specified)
+
