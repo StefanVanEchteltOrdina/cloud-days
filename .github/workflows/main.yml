@@ -50,6 +50,6 @@ jobs:
           registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-          ports: 8080:80
+          ports: 8080:8080
           name: cloud-days-stefan
           location: 'westeurope'
