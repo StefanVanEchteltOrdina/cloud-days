@@ -45,7 +45,7 @@ jobs:
         uses: 'azure/aci-deploy@v1'
         with:
           resource-group: ${{ secrets.RESOURCE_GROUP }}
-          dns-name-label: ${{ secrets.RESOURCE_GROUP }}${{ github.run_number }}
+          dns-name-label: ${{ secrets.RESOURCE_GROUP }}-cloud-days-stefan
           image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/cloud-days-stefan:${{ github.sha }}
           registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
