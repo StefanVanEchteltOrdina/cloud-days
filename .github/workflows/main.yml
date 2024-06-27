@@ -21,4 +21,4 @@ jobs:
           java-version: '17'
 
       - name: build with mvn
-        run: ./mvnw package
+        run: ./mvn package
