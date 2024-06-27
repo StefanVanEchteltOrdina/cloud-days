@@ -27,7 +27,7 @@ jobs:
         run: ./mvnw package
 
       - name: Build docker image
-        run: docker build . -t cloud-days-stefan:lastest
+        run: docker build -f src/main/docker/Dockerfile.jvm -t cloud-days-stefan:lastest .
 
       - name: Docker registry login
         run: echo "hallo"
