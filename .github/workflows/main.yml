@@ -26,8 +26,12 @@ jobs:
       - name: build with mvn
         run: ./mvnw package
 
-      - name: Build docker image
-        run: docker build -f src/main/docker/Dockerfile.jvm -t cloud-days-stefan:lastest .
-
-      - name: Docker registry login
-        run: echo "hallo"
+      - name: 'Build and push image'
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+      - run: |
+          docker build -f src/main/docker/Dockerfile.jvm -t ${{ secrets.REGISTRY_LOGIN_SERVER/cloud-days-stefan:${{ github.sha }}
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:${{ github.sha }}
