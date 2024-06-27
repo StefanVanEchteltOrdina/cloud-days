@@ -32,8 +32,7 @@ jobs:
           with:
             azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
             repo_token: ${{ secrets.GITHUB_TOKEN }}
-            app_location: '/'  # Path to your application code within the repository
-            api_location: ''   # Path to your API code within the repository (optional)
-            output_location: ''  # Path to the build output directory (optional, defaults to 'build')
-            app_artifact_location: 'build'  # Path to the build output directory (required if output_location is specified)
+            app_location: '/frontend'  # Path to your application code within the repository
+            output_location: '.next'  # Path to the build output directory (optional, defaults to 'build')
+            app_artifact_location: '.next'  # Path to the build output directory (required if output_location is specified)
 
