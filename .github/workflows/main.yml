@@ -54,32 +54,5 @@ jobs:
           ports: 8080:8080
           name: cloud-days-stefan
           location: 'westeurope'
-
-
-  build-and-deploy-front-end:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20.9.0'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build  # Adjust build command if different
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
-        with:
-          name: cloud-days-front-end-stefan
-          path: .
+          
 
