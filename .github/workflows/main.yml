@@ -76,3 +76,10 @@ jobs:
 
       - name: Build
         run: npm run build  # Adjust build command if different
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v3
+        with:
+          name: cloud-days-front-end-stefan
+          path: .
+
